@@ -1,0 +1,23 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "env": {
+    "es2021": true,
+    "mocha": true
+  },
+  "extends": ["airbnb-base", "prettier", "plugin:node/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": "error",
+    "no-console": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "no-return-assign": "off",
+    "no-param-reassign": "off"
+  }
+}

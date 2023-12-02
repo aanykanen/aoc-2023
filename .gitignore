@@ -4,6 +4,10 @@
 # Input
 puzzle-input*
 
+# Tests are excluded as there is no permission defined for posting them
+# However, I am doing these puzzles using TDD
+index.spec.js
+
 # Logs
 logs
 *.log
