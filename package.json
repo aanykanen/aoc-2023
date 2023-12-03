@@ -8,7 +8,7 @@
     "start": "npm run build && node dist/index.js",
     "lint": "eslint --fix --ext .js ./src",
     "test": "mocha --require @babel/register src/**/*.spec.js",
-    "test:watch": "mocha --require @babel/register --watch src/day-1/index.spec.js"
+    "test:watch": "mocha --require @babel/register --watch src/day-2/index.spec.js"
   },
   "repository": {
     "type": "git",

@@ -1,12 +1,13 @@
 # Node gitignore template from: https://github.com/github/gitignore/blob/main/Node.gitignore
 # Template licensed under CC0 license: https://github.com/github/gitignore/blob/4488915eec0b3a45b5c63ead28f286819c0917de/LICENSE
 
-# Input
+# Personal puzzle input should not be commited to repo
 puzzle-input*
 
 # Tests are excluded as there is no permission defined for posting them
 # However, I am doing these puzzles using TDD
 index.spec.js
+test-input*
 
 # Logs
 logs

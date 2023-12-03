@@ -11,7 +11,7 @@ function formatNumber(firstNumber, secondNumber) {
 
 export function solvePuzzle1(puzzleInput) {
   const rows = puzzleInput.split('\n');
-  return rows.map(getRowNumbers).reduce((prev, next) => (next += prev), 0);
+  return rows.map(getRowNumbers).reduce((p, n) => (n += p), 0);
 
   function getRowNumbers(row) {
     const firstNumber = Number([...row].find((v) => v.match(/\d/)));
@@ -38,7 +38,7 @@ export function solvePuzzle2(puzzleInput) {
   };
 
   const rows = puzzleInput.split('\n').filter((row) => row.length !== 0);
-  return rows.map(getRowNumbers).reduce((prev, next) => (next += prev), 0);
+  return rows.map(getRowNumbers).reduce((p, n) => (n += p), 0);
 
   // Note the edge case when same number has multiple entries
   function getRowNumbers(row) {
