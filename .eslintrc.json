@@ -18,6 +18,8 @@
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",
     "no-return-assign": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "no-shadow": "off"
   }
 }

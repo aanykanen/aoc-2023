@@ -4,11 +4,11 @@
   "description": "My Advent of Code solutions for year 2023",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --source-maps --copy-files --delete-dir-on-start --out-dir=dist --minified",
+    "build": "babel src --source-maps --copy-files --delete-dir-on-start --out-dir=dist",
     "start": "npm run build && node dist/index.js",
     "lint": "eslint --fix --ext .js ./src",
     "test": "mocha --require @babel/register src/**/*.spec.js",
-    "test:watch": "mocha --require @babel/register --watch src/day-2/index.spec.js"
+    "test:watch": "mocha --require @babel/register --watch src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
