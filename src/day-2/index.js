@@ -20,15 +20,18 @@ function parseCubes(handfulOfCubes) {
 export function solvePuzzle1(puzzleInput) {
   const minCubes = { red: 12, green: 13, blue: 14 };
 
-  return puzzleInput.split('\n').reduce((p, n) => {
-    const gameId = Number(n.match(/^Game (?<gameId>\d+): /).groups.gameId);
-    const gameInput = n.replace(/^Game \d+: /, '');
+  return puzzleInput
+    .split('\n')
+    .filter((r) => r !== '')
+    .reduce((p, n) => {
+      const gameId = Number(n.match(/^Game (?<gameId>\d+): /).groups.gameId);
+      const gameInput = n.replace(/^Game \d+: /, '');
 
-    const handfulsOfCubes = gameInput.split(';').map((v) => v.trim());
-    const parsedHandfulOfCubes = handfulsOfCubes.map(parseCubes);
+      const handfulsOfCubes = gameInput.split(';').map((v) => v.trim());
+      const parsedHandfulOfCubes = handfulsOfCubes.map(parseCubes);
 
-    return gameMeetsCubeRequirements(parsedHandfulOfCubes) ? p + gameId : p;
-  }, 0);
+      return gameMeetsCubeRequirements(parsedHandfulOfCubes) ? p + gameId : p;
+    }, 0);
 
   function gameMeetsCubeRequirements(game) {
     return game.every((handful) => COLORS.every((color) => handful[color] <= minCubes[color]));
@@ -36,15 +39,18 @@ export function solvePuzzle1(puzzleInput) {
 }
 
 export function solvePuzzle2(puzzleInput) {
-  return puzzleInput.split('\n').reduce((p, n) => {
-    const gameInput = n.replace(/^Game \d+: /, '');
+  return puzzleInput
+    .split('\n')
+    .filter((r) => r !== '')
+    .reduce((p, n) => {
+      const gameInput = n.replace(/^Game \d+: /, '');
 
-    const handfulsOfCubes = gameInput.split(';').map((v) => v.trim());
-    const parsedHandfulOfCubes = handfulsOfCubes.map(parseCubes);
-    const gamePower = getGamePower(parsedHandfulOfCubes);
+      const handfulsOfCubes = gameInput.split(';').map((v) => v.trim());
+      const parsedHandfulOfCubes = handfulsOfCubes.map(parseCubes);
+      const gamePower = getGamePower(parsedHandfulOfCubes);
 
-    return p + gamePower;
-  }, 0);
+      return p + gamePower;
+    }, 0);
 
   function getGamePower(game) {
     const minCubes = game.reduce(

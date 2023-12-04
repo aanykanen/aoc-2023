@@ -10,7 +10,7 @@ function formatNumber(firstNumber, secondNumber) {
 }
 
 export function solvePuzzle1(puzzleInput) {
-  const rows = puzzleInput.split('\n');
+  const rows = puzzleInput.split('\n').filter((r) => r !== '');
   return rows.map(getRowNumbers).reduce((p, n) => (n += p), 0);
 
   function getRowNumbers(row) {
@@ -37,7 +37,7 @@ export function solvePuzzle2(puzzleInput) {
     nine: 9,
   };
 
-  const rows = puzzleInput.split('\n').filter((row) => row.length !== 0);
+  const rows = puzzleInput.split('\n').filter((r) => r !== '');
   return rows.map(getRowNumbers).reduce((p, n) => (n += p), 0);
 
   // Note the edge case when same number has multiple entries

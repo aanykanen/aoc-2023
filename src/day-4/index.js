@@ -19,12 +19,15 @@ function parseCardPoints(card) {
 }
 
 export function solvePuzzle1(puzzleInput) {
-  const cards = puzzleInput.split('\n');
+  const cards = puzzleInput.split('\n').filter((r) => r !== '');
   return cards.map(parseCardPoints).reduce((p, n) => (n.points += p), 0);
 }
 
 export function solvePuzzle2(puzzleInput) {
-  const origCards = puzzleInput.split('\n').map(parseCardPoints);
+  const origCards = puzzleInput
+    .split('\n')
+    .filter((r) => r !== '')
+    .map(parseCardPoints);
   // Note: reversing the order because acquired cards can only have greater ID than
   // the card it was acquired from
   const cardsAdded = origCards.reverse().reduce((p, n) => {

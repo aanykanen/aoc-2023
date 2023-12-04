@@ -1,13 +1,16 @@
 # Node gitignore template from: https://github.com/github/gitignore/blob/main/Node.gitignore
 # Template licensed under CC0 license: https://github.com/github/gitignore/blob/4488915eec0b3a45b5c63ead28f286819c0917de/LICENSE
 
-# Personal puzzle input should not be commited to repo
+# Personal puzzle input(s) should not be commited to repo
 puzzle-input*
 
-# Tests are excluded as there is no permission defined for posting them
-# However, I am doing these puzzles using TDD
-index.spec.js
+# I am solving these puzzles using TDD
+
+# Test definition files (*.spec.js) are included to the repo but the inputs/outputs
+# to utilize the tests are not since posting
+# input or output information regarding puzzles is denied (see link in README for reference)
 test-input*
+test-output*
 
 # Logs
 logs

@@ -1,5 +1,5 @@
 export function solvePuzzle1(puzzleInput) {
-  const lines = puzzleInput.split('\n');
+  const lines = puzzleInput.split('\n').filter((r) => r !== '');
   return lines
     .map((line, idx) => getPartNumbers(line, idx, lines))
     .flat()
@@ -54,7 +54,7 @@ export function solvePuzzle1(puzzleInput) {
 }
 
 export function solvePuzzle2(puzzleInput) {
-  const lines = puzzleInput.split('\n');
+  const lines = puzzleInput.split('\n').filter((r) => r !== '');
   return lines
     .map((line, idx) => getGearRatios(line, idx, lines))
     .flat()
